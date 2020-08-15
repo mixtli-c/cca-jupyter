@@ -1,0 +1,21 @@
+tepoch, float
+\lat, float
+\lon, float
+\/PreprocessingResults/surface_pressure_abp, float
+\/PreprocessingResults/surface_pressure_apriori_abp, float
+\/RetrievalGeometry/retrieval_altitude, float
+\/RetrievalGeometry/retrieval_latitude, float
+\/RetrievalGeometry/retrieval_longitude, float
+\/RetrievalGeometry/retrieval_solar_azimuth, float
+\/RetrievalResults/co2_profile_apriori, float, 20
+\/RetrievalResults/vector_pressure_levels, float, 20
+\/RetrievalResults/surface_pressure_apriori_fph, float
+\/RetrievalResults/surface_pressure_fph, float
+\/RetrievalResults/wind_speed, float
+\/RetrievalResults/wind_speed_apriori, float
+\/RetrievalResults/xco2, float
+\/RetrievalResults/xco2_apriori, float
+\/RetrievalResults/xco2_avg_kernel, float, 20
+\/RetrievalResults/xco2_pressure_weighting_function, float, 20
+\/RetrievalResults/xco2_uncert, float
+\/RetrievalHeader/retrieval_time_tai93, float64

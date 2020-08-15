@@ -1,0 +1,26 @@
+OCO2
+
+/Retrieval/psurf, float\
+/Retrieval/psurf_apriori, float\
+/Retrieval/windspeed, float\
+/Retrieval/windspeed_apriori, float\
+/Retrieval/windspeed_apriori, float\
+/Sounding/airmass, float\
+/Sounding/altitude, float\
+/Sounding/land_water_indicator, int\
+co2_profile_apriori, float, 20\
+date, int, 7\
+latitude, float\
+longitude, float\
+pressure_levels, float, 20\
+pressure_weight, float, 20\
+solar_azimuth_angle, float\
+time, float\
+warn_level, int\
+xco2, float\
+xco2_apriori, float\
+xco2_averaging_kernel, float, 20\
+xco2_quality_flag, int\
+xco2_uncertainty, float
+
+

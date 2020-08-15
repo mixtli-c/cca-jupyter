@@ -1,0 +1,10 @@
+tepoch, float
+\/latitude, float32
+\/longitude, float32
+\/sounding_id, int64
+\/time_tai93, float64
+\/xco2, float64
+\/xco2_avg_kernel, float64, 20
+\/xco2_avg_kernel_norm, float64, 20
+\/xco2_pressure_weighting_function, float64, 20
+\/xco2_raw, float32
