@@ -16,9 +16,9 @@ import datetime as dt
 ### Inicio de la parte que requiere modificacion por el usuario
 # direccion de los archivos HDF de entrada y salidda 
 # nombre semilla de los archivos (e.g. mexico_oco3_target, o mexico_oco3_early)
-path_hdfin = "f:\\jupyter\\oco3_mexico_city\\mexico\\"
-path_hdfout = "f:\\jupyter\\oco3_mexico_city\\mexico\\"
-seedname = 'mexico_oco3_target_'
+path_hdfin = "f:\\CCA\\NASAGESDISC\\mexico\\"
+path_hdfout = "f:\\CCA\\NASAGESDISC\\mexico\\"
+seedname = 'mexico_oco3_lite_'
 
 # nombre en el archivo HDF de las variables de latitud (y), longitud (x), y de interes (z)
 # aqui se incluye el nombre de POSIX (tepoch) por si se llegase a cambiar
@@ -28,10 +28,10 @@ lonname = '/longitude'
 zname = '/xco2'
 epochname = 'tepoch'
 
-# inicializacion de las condiciones : año, mes (o meses), punto de interes (lat y lon), tamaño de grid deseado
-location_name = 'Vallejo : 15 km'
-years = [2020]
-months = np.arange(1,7)                           # np.arange(n,m) genera un arreglo con primer elemento n y ultimo m-1
+# inicializacion de las condiciones : anyo, mes (o meses), punto de interes (lat y lon), tamaño de grid deseado
+location_name = 'Vallejo : 15 km (OCO3 LITE)'
+years = [2019,2020]
+months = np.arange(1,13)                           # np.arange(n,m) genera un arreglo con primer elemento n y ultimo m-1
 latpoint = 19.483781                                   # latitud del punto de interes
 lonpoint = -99.147                                  # longitud del punto de interes
 gridsize = 0.14                                    # tamanyo del grid en fraccion de grados, 0.14 para 15km, 0.09 para 10 km
