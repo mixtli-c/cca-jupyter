@@ -26,13 +26,13 @@ archivo_variables = 'f:\\gitCCA\\cca-jupyter\\oco3lite_variables.txt'
 # nombre de variables de latitud, longitud (e.g. /RetrievalGeometry/latitude) tiempo (e.g /time_tai93)
 latname = "/latitude"
 lonname = "/longitude"
-timename = "/time"
+timename = "/time_tai93"
 
 # tipo de formato de tiempo en el archivo fuente: 0 - posix, 1 - tai , 2 - date
-whattime = 0
+whattime = 1
 
 # existe variable de quality flag? 0 - No, 1 - Si
-qfexists = 1
+qfexists = 0
 qfname = "/xco2_quality_flag"
 
 ### Fin de la seccion que requiere configuracion por parte del usuario
@@ -117,7 +117,7 @@ def processlist(lista,h5filename):
     
     # esta seccion se encarga de generar una matriz para que la funcion onebyone escriba el hdf 
     for filename in lista:
-        #print(filename)
+        print(filename)
         datos=h5py.File(filename,'r')                              # abre el archivo hdf del target
         lat = datos[latname][()]                                # vector de latitud
         lon = datos[lonname][()]                                # vector de longitud
@@ -126,12 +126,13 @@ def processlist(lista,h5filename):
             xco2_qf = datos[qfname][()]                  # vector de quality flag (sin usar para target)
         
         if qfexists == 1:
-             # Lo siguiente es el filtro para latitud, longitud, y xco2 quality flag
+            # Lo siguiente es el filtro para latitud, longitud, y xco2 quality flag
             cond_latlon = ((lat > latmin) & (lat < latmax) & (lon > lonmin) & (lon < lonmax) & (xco2_qf == 0))
-        else:
+            
+        if qfexists == 0:
             # Lo siguiente es el filtro para latitud, longitud
             cond_latlon = ((lat > latmin) & (lat < latmax) & (lon > lonmin) & (lon < lonmax)) 
-            #print(filename,len(lat),len(lat[cond_latlon]))
+            # print(filename,len(lat),len(lat[cond_latlon]))
         
         # el siguiente if/else crea la matriz mat_inter solo si se cumple la condicion
         if len(lat[cond_latlon]) > 0:                 

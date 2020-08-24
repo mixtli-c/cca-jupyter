@@ -1,4 +1,6 @@
 tepoch, float
+\lat, float
+\lon, float
 \/latitude, float32
 \/longitude, float32
 \/sounding_id, int64
