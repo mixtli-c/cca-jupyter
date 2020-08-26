@@ -19,17 +19,17 @@ import datetime as dt
 # nombre del sitio, extension, tipo de fuente (e.g. LtCO2 o target)
 # para generar titulo del grafico y nombre de archivo de salida
 location_name = 'Vallejo'
-size = '10km'
-sourcetype = 'OCO3L2Lt'
+size = '5km'
+sourcetype = 'target'
 plotname = location_name + ' ' + size + ' ' + sourcetype
 filename = location_name + '_' + size + '_' + sourcetype
 
 # direccion de los archivos HDF de entrada y salidda 
 # nombre semilla de los archivos (e.g. mexico_oco3_target, o mexico_oco3_early)
-path_hdfin = "f:\\CCA\\NASAGESDISC\\OCO3L2Lite\\mexico\\"
-seedname = 'mexico_oco3_lite_'
-path_hdfout = "f:\\CCA\\NASAGESDISC\\OCO3L2Lite\\timeseries\\"
-path_plotout = "f:\\CCA\\NASAGESDISC\\OCO3L2Lite\\timeseries\\"
+path_hdfin = "f:\\jupyter\\oco3_mexico_city\\mexico2\\"
+seedname = 'mexico_oco3_target_'
+path_hdfout = "f:\\jupyter\\oco3_mexico_city\\timeseries\\"
+path_plotout = "f:\\jupyter\\oco3_mexico_city\\timeseries\\"
 name_hdfout = path_hdfout + filename + '.h5'
 name_plotout = path_plotout + filename + '.png'
 
@@ -42,11 +42,11 @@ zname = '/xco2'
 epochname = 'tepoch'
 
 # inicializacion de las condiciones : anyo, mes (o meses), punto de interes (lat y lon), tamanyo de grid deseado
-years = [2019,2020]
+years = [2020]
 months = np.arange(1,13)                           # np.arange(n,m) genera un arreglo con primer elemento n y ultimo m-1
 latpoint = 19.483781                               # latitud del punto de interes
 lonpoint = -99.147                           # longitud del punto de interes
-radiuskm = 10                                   # radio del grid en km
+radiuskm = 5                                   # radio del grid en km
 gridsize = radiuskm/110.567                  # tamanyo del grid en fraccion de grados
 
 ### Fin de la parte que requiere moddificacion por el usuario
@@ -178,7 +178,7 @@ ax.xaxis.set_tick_params(rotation=30, labelsize=10)
 plt.xlabel('Date')
 plt.ylabel(zname)
 plt.title(plotname)
-#plt.tight_layout()
+plt.tight_layout()
 plt.savefig(name_plotout)
 plt.show()
 
