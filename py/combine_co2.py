@@ -14,24 +14,24 @@ import format_co2
 ### Esta seccion requiere configuracion por el usuario
 
 # genera la lista de anyos y el arreglo de meses
-years = [2020]          
+years = [2019, 2020]          
 meses = np.arange(1,13)
 
 # informacion sobre el path de los archivos
-readpath = 'f:\\jupyter\\oco3_mexico_city\\h5\\'
-readformat = '.h5'
+readpath = 'f:\\CCA\\NASAGESDISC\\OCO3L2Lite\\LITE\\'
+readformat = '.nc4'
 
 # use read_seedname si los nombres de la fuente tienen un formato establecido, de lo contrario use *
 # NOTA: asegurese que el formato generado solo se repita en la seccion de fecha del archivo y no en otro identificador
 # (e.g. orbita)
-read_seedname = '*'
+read_seedname = 'oco3_LtCO2_'
 
-writepath = 'f:\\jupyter\\oco3_mexico_city\\mexico2\\'
-write_seedname = 'mexico_oco3_lite_'
+writepath = 'f:\\CCA\\NASAGESDISC\\OCO3L2Lite\\mexico2\\'
+write_seedname = 'mexico2_oco3_lite_'
 
 # yearformat: 0 si es dos digitos, 1 si es 4 digitos
 
-yearformat = 1
+yearformat = 0
 
 ### Fin de seccion que requiere configuracion por el usuario
 #################################################################################################################

@@ -22,5 +22,5 @@ tepoch, float
 \/xco2_averaging_kernel, float, 20
 \/xco2_quality_flag, int
 \/xco2_uncertainty, float
-
-
+\/Sounding/target_id, <S28
+\/Sounding/target_name, <S28

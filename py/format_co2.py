@@ -21,20 +21,22 @@ lonmin = -119
 lonmax = -73
 
 # nombre del archivo .txt con las variables
-archivo_variables = 'f:\\gitCCA\\cca-jupyter\\targetvariables.txt'
+archivo_variables = 'f:\\gitCCA\\cca-jupyter\\data\\oco3lite_variables.txt'
 
 # nombre de variables de latitud, longitud (e.g. /RetrievalGeometry/latitude) tiempo (e.g /time_tai93)
 latname = "/latitude"
 lonname = "/longitude"
-timename = "/time_tai93"
+timename = "/time"
 
 # tipo de formato de tiempo en el archivo fuente: 0 - posix, 1 - tai , 2 - date
-whattime = 1
+whattime = 0
 
 # existe variable de quality flag? 0 - No, 1 - Si
-qfexists = 0
+qfexists = 1
 qfname = "/xco2_quality_flag"
 
+### NOTA IMPORTANTE: Las variable target_id y target_name necesitan convertirse a numpy unicode ('U')
+### Si usas estas variables necesitas revisar la funcion processlist
 ### Fin de la seccion que requiere configuracion por parte del usuario
 ####################################################################################################
 
@@ -61,9 +63,9 @@ for ele in variables.split("\\"):                # divide variables en elementos
         else:                                    # strip() elimina los espacios vacios
             tupla.append(ele.strip())            # los dos primeros elementos del tuple trozos se agregan a la lista tupla 
     fields.append(tuple(tupla))                  # agrega el la lista tupla como tuple a fields
-# print(fields)
+#print(fields)
 read_tipos=np.dtype(fields)                # genera la estructura para crear la matriz
-# print(tipos)
+print(read_tipos)
 
 
 def onebyone(mat_datos,fh5):
@@ -87,6 +89,9 @@ def onebyone(mat_datos,fh5):
             fh5.flush()                                          # escribe en disco 
         except:
             datalatlon=[line]                                    # crea una lista con los datos de la linea
+            #dset=fh5.create_dataset('%iN%iW' % (int(lat),int(lon)),data=datalatlon,maxshape=(None,))
+            #fh5.flush() 
+            #print("except works")
             # try/except intenta crear un dataset, si fall entonces muestra un mensaje
             try:
                 # crea un dataset xN-yW sin limite (None) tomando la parte entera de lat y lon con los datos de la linea
@@ -140,9 +145,20 @@ def processlist(lista,h5filename):
             mat_inter = np.empty(len(lat[cond_latlon]),dtype=read_tipos) # mat_inter es estructura target_hdf_tipos
             
             for name in read_tipos.names[3:]:                            # empieza desde 3 porque agregamos tepoch, lat, lon
-                mat_inter[name] = datos[name][()][cond_latlon]
+                if (name=='/Sounding/target_id') or (name=='/Sounding/target_name'):
+                    #print(name)
+                    datosobj = datos[name][()][cond_latlon]
+                    datosstr = datosobj.astype('<S28')
+                    mat_inter[name] = datosstr
+                    #print(datosstr)
+                    #print(mat_inter[name])
+                    #print('string')
+                else: 
+                    mat_inter[name] = datos[name][()][cond_latlon]
+                    #print(mat_inter[name])
+                    #print('notstring')
             
-            # El siguiente if/elif/else selecciona como se creara "tepoch" dependiendo del formato de tiempo del archivo fuente
+            # Los siguientes 3 IF seleccionan como se creara "tepoch" dependiendo del formato de tiempo del archivo fuente
             if whattime == 0:
                 ### POSIX: El tiempo solamente se copia
                 mat_inter["tepoch"] = mat_inter[timename]
@@ -155,8 +171,9 @@ def processlist(lista,h5filename):
                 
             mat_inter["lat"] = mat_inter[latname]                         # lat y lon adicionales para preservar un formato
             mat_inter["lon"] = mat_inter[lonname]                         # para todos los tipos de archivos
-            #print("mat_inter",mat_inter.shape)
-            
+            #print(mat_inter["lat"])
+            #print(mat_inter["lon"])
+            #wait = input("PRESS ENTER TO CONTINUE.")
             if cont == 0:
                 ### SE CREA LA MATRIZ DONDE SE CONCATENAN LOS DIFERENTES DIAS AL INICIO, CUANDO EL CONTADOR ES 0
                 mat_datos = copy.copy(mat_inter)
@@ -166,13 +183,16 @@ def processlist(lista,h5filename):
                 mat_datos = np.concatenate((mat_datos,mat_inter),axis=0)
             
             cont = cont+len(lat[cond_latlon])
+            #wait = input("PRESS ENTER TO CONTINUE.")
         
         else:
             continue
             
         datos.close()
     #print("Contador",cont)
+    #print(mat_datos)
     print("mat_datos",h5filename,mat_datos.shape)
+    #wait = input("PRESS ENTER TO CONTINUE.")
     onebyone(mat_datos,fh5)  ### SE MANDA LLAMAR onebyone
     #zlevels=np.arange(20)
     #fh5.attrs.create('zlevels', zlevels, dtype=zlevels.dtype )
