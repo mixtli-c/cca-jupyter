@@ -26,8 +26,8 @@ readformat = '.nc4'
 # (e.g. orbita)
 read_seedname = 'oco3_LtCO2_'
 
-writepath = 'f:\\CCA\\NASAGESDISC\\OCO3L2Lite\\mexico2\\'
-write_seedname = 'mexico2_oco3_lite_'
+writepath = 'f:\\CCA\\NASAGESDISC\\OCO3L2Lite\\mexico\\'
+write_seedname = 'mexico_oco3_lite_'
 
 # yearformat: 0 si es dos digitos, 1 si es 4 digitos
 

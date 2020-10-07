@@ -1,0 +1,33 @@
+volcano0002	v341090_Popocatepetl	2123	2020-05-10 13:45:35	2020-05-10 13:47:40	
+volcano0002	v341090_Popocatepetl		2020-05-28 20:50:05	2020-05-28 20:52:10	
+volcano0002	v341090_Popocatepetl		2020-06-05 17:40:55	2020-06-05 17:43:00	
+volcano0002	v341090_Popocatepetl	526	2020-06-09 16:06:15	2020-06-09 16:08:20	
+volcano0002	v341090_Popocatepetl	1	2020-07-29 20:23:55	2020-07-29 20:26:00	
+volcano0002	v341090_Popocatepetl	1999	2020-08-06 17:17:25	2020-08-06 17:19:30	
+volcano0002	v341090_Popocatepetl	0	2020-08-27 18:33:15	2020-08-27 18:35:20	no plots
+volcano0002	v341090_Popocatepetl	1517	2020-08-31 16:59:25	2020-08-31 17:01:30	no plots
+volcano0002	v341090_Popocatepetl	587	2020-09-04 15:25:35	2020-09-04 15:27:40	no plots
+volcano0002	v341090_Popocatepetl		2020-09-22 22:36:05	2020-09-22 22:38:10
+
+
+fossil0036	fossil_Mexico_City_Mexico		2019-09-27 21:27:45	2019-09-27 21:29:50	no plots
+fossil0036	fossil_Mexico_City_Mexico	1399	2020-02-08 16:28:05	2020-02-08 16:30:10	
+fossil0036	fossil_Mexico_City_Mexico		2020-03-26 21:45:35	2020-03-26 21:47:40	
+fossil0036	fossil_Mexico_City_Mexico		2020-03-30 20:12:55	2020-03-30 20:15:00	
+fossil0036	fossil_Mexico_City_Mexico	2166	2020-04-11 15:36:55	2020-04-11 15:39:00	
+fossil0036	fossil_Mexico_City_Mexico	884	2020-04-20 21:36:35	2020-04-20 21:38:40	
+fossil0036	fossil_Mexico_City_Mexico	1302	2020-04-28 18:28:15	2020-04-28 18:30:20	
+fossil0036	fossil_Mexico_City_Mexico		2020-05-02 16:54:05	2020-05-02 16:56:10	
+fossil0036	fossil_Mexico_City_Mexico	2042	2020-05-06 15:19:45	2020-05-06 15:21:50	
+fossil0036	fossil_Mexico_City_Mexico	1139	2020-05-24 22:24:25	2020-05-24 22:26:30	
+fossil0036	fossil_Mexico_City_Mexico	710	2020-06-29 18:04:05	2020-06-29 18:06:10	
+fossil0036	fossil_Mexico_City_Mexico	1976	2020-07-03 16:29:15	2020-07-03 16:31:20	
+fossil0036	fossil_Mexico_City_Mexico	1101	2020-07-07 14:54:25	2020-07-07 14:56:30	
+fossil0036	fossil_Mexico_City_Mexico	2	2020-07-25 21:58:55	2020-07-25 22:01:00	
+fossil0036	fossil_Mexico_City_Mexico	619	2020-08-02 18:50:55	2020-08-02 18:53:00	
+fossil0036	fossil_Mexico_City_Mexico	1242	2020-08-10 15:43:45	2020-08-10 15:45:50	
+fossil0036	fossil_Mexico_City_Mexico	1157	2020-08-23 20:06:45	2020-08-23 20:08:50	no plots
+fossil0036	fossil_Mexico_City_Mexico	122	2020-09-26 21:03:55	2020-09-26 21:06:00	no plots
+fossil0036	fossil_Mexico_City_Mexico		2020-09-30 19:31:45	2020-09-30 19:33:50	no plots
+fossil0036	fossil_Mexico_City_Mexico		2020-10-04 17:59:25	2020-10-04 18:01:30	no plots
+fossil0036	fossil_Mexico_City_Mexico		2020-10-08 16:26:15	2020-10-08 16:28:20	no plots
