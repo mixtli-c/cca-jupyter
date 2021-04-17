@@ -21,7 +21,7 @@ lonmin = -119
 lonmax = -73
 
 # nombre del archivo .txt con las variables
-archivo_variables = 'd:\\gitCCA\\cca-jupyter\\data\\oco3lite_variables.txt'
+archivo_variables = 'f:\\gitCCA\\cca-jupyter\\data\\oco3lite_variables.txt'
 
 # nombre de variables de latitud, longitud (e.g. /RetrievalGeometry/latitude) tiempo (e.g /time_tai93)
 latname = "/latitude"
