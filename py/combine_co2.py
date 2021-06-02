@@ -14,11 +14,11 @@ import format_co2
 ### Esta seccion requiere configuracion por el usuario
 
 # genera la lista de anyos y el arreglo de meses
-years = [2019, 2020]          
+years = [2021]          
 meses = np.arange(1,13)
 
 # informacion sobre el path de los archivos
-readpath = 'd:\\CCA\\NASAGESDISC\\OCO3L2Lite\\LITE\\'
+readpath = 'd:\\CCA\\NASAGESDISC\\OCO3\\LITE_2021\\'
 readformat = '.nc4'
 
 # use read_seedname si los nombres de la fuente tienen un formato establecido, de lo contrario use *
@@ -26,7 +26,7 @@ readformat = '.nc4'
 # (e.g. orbita)
 read_seedname = 'oco3_LtCO2_'
 
-writepath = 'd:\\CCA\\NASAGESDISC\\OCO3L2Lite\\mexico3\\'
+writepath = 'd:\\CCA\\NASAGESDISC\\OCO3\\MEXICO_2021\\'
 write_seedname = 'mexico_oco3_lite_'
 
 # yearformat: 0 si es dos digitos, 1 si es 4 digitos
